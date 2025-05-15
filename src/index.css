@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap');
+
+:root {
+  --color-primary: #5D3FD3;
+  --color-secondary: #191970;
+  --color-accent: #F5D300;
+  --color-background: #121212;
+  --color-surface: #1E1E1E;
+  --color-text: #E0E0E0;
+}
+
+body {
+  font-family: 'Cormorant Garamond', serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cinzel', serif;
+}
+
+.mystical-gradient {
+  background: linear-gradient(135deg, #191970 0%, #5D3FD3 100%);
+}
+
+.mystical-card {
+  @apply bg-indigo-900/30 backdrop-blur-sm border border-purple-800/50 rounded-lg shadow-xl p-6;
+}
+
+.mystical-input {
+  @apply bg-indigo-900/20 border border-purple-700/50 rounded-md py-2 px-4 text-white placeholder-purple-300/70 focus:outline-none focus:ring-2 focus:ring-purple-500/50;
+}
+
+.mystical-button {
+  @apply bg-gradient-to-r from-purple-800 to-indigo-900 text-white font-cinzel py-2 px-6 rounded-md shadow-lg hover:from-purple-700 hover:to-indigo-800 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300;
+}
+
+.section-title {
+  @apply font-cinzel text-2xl md:text-3xl text-white mb-6 border-b border-purple-700/50 pb-2;
+}
+
+@layer utilities {
+  .font-cinzel {
+    font-family: 'Cinzel', serif;
+  }
+  
+  .font-cormorant {
+    font-family: 'Cormorant Garamond', serif;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.animate-float-up {
+  animation: floatUp 0.8s ease-out forwards;
+}
+
+@keyframes shimmer {
+  0% { background-position: -100% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, rgba(93, 63, 211, 0), rgba(93, 63, 211, 0.4), rgba(93, 63, 211, 0));
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+}
